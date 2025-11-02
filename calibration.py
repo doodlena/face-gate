@@ -1,17 +1,10 @@
-
-"""
-Created on Fri Apr 25 18:37:55 2025
-
-@author: naman
-"""
-
 import cv2
 import face_recognition
 import pickle
 import numpy as np
 
 
-with open("Audrey_face_data.pkl", "rb") as f:
+with open("face_data.pkl", "rb") as f:
     known = pickle.load(f)
 
 
@@ -32,7 +25,7 @@ while True:
         best = dist[best_match_index]
 
         percent = (1 - best) * 100
-        print(f"Distance: {best:.4f} | Confidence: {percent:.2f}%")
+        print(f"Distance: {best:.4f}, Confidence: {percent:.2f}%")
 
         t, r, b, le = l[0]
         col = (0, 255, 0) if percent > 70 else (0, 0, 255)
@@ -47,3 +40,4 @@ while True:
 
 video.release()
 cv2.destroyAllWindows()
+
