@@ -14,8 +14,9 @@ for f in os.listdir(folder):
             images.append(nex[0])
 
 if images:
-    with open("Audrey_face_data.pkl", "wb") as f:
+    with open("face_data.pkl", "wb") as f:
         pickle.dump(images, f)
     print("Done.")
 else:
     print("Didn't work :(")
+
