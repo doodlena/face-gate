@@ -9,7 +9,7 @@ import time
 import threading
 from cryptography.fernet import Fernet
 from tkinter import filedialog
-package = "Audrey_face_data.pkl"
+package = "face_data.pkl"
  
 def load():
     try:
@@ -255,9 +255,7 @@ def open_notes():
     buttons.pack(fill='x', side='bottom', pady=5)
 
     tk.Button(buttons, text="Open", font=("Arial", 12), command=lambda: file_opener()).pack(side='left', padx=10)
-
     tk.Button(buttons, text="Save", font=("Arial", 12), bg="#4CAF50", fg="white", command=lambda: save_n(c_path if c_path else default)).pack(side='left', padx=10)
-
     tk.Button(buttons, text="Save As", font=("Arial", 12), bg="#2196F3", fg="white", command=lambda: saving()).pack(side='right', padx=10)
 
     def file_opener():
@@ -277,3 +275,4 @@ def open_notes():
 hola = tk.Tk()
 app = LockApp(hola)
 hola.mainloop()
+
